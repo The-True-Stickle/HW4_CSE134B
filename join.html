@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join the Society</title>
+  <link rel="stylesheet" href="styles/vars.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <!--
+    FLEX PAGE SCAFFOLD
+    The body is a flex column at least as tall as the viewport. Header and
+    footer take their natural height; main has flex: 1, so it grows to
+    absorb the leftover space and pushes the footer to the bottom even
+    when the content is short.
+  -->
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+
+      > header {
+        padding: var(--space-2) var(--space-3);
+        border-block-end: var(--border);
+        background: var(--panel);
+      }
+
+      > main {
+        max-width: var(--card-width);
+        padding: var(--space-3);
+        border: var(--border);
+        border-block-start: var(--rule);
+        background: var(--panel);
+      }
+
+      > footer {
+        padding: var(--space-2) var(--space-3);
+        border-block-start: var(--border);
+        background: var(--panel);
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Join The CSE Cheese Society</h1>
+  </header>
+
+  <main>
+    <p>Membership is free, meetings are monthly, and the cheese is real.</p>
+    <p>Fill out the form and the Keeper of the Cave will be in touch.</p>
+
+    <form action="" method="post" class="membership-form">
+        <div class="form-question">
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" required />
+        </div>
+        <div class="form-question">
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" required />
+        </div>
+        <fieldset>
+            <legend>Which family calls to you?</legend>
+            <input type="radio" id="fresh" name="fresh" value="fresh" />
+            <label for="fresh">Fresh</label>
+
+            <input type="radio" id="soft-ripened" name="soft-ripened" value="soft-ripened" />
+            <label for="soft-ripened">Soft-ripened</label>
+
+            <input type="radio" id="blue" name="blue" value="blue" />
+            <label for="blue">Blue</label>
+
+            <input type="radio" id="hard" name="hard" value="hard" />
+            <label for="hard">Hard</label>
+
+            <input type="radio" id="undecided" name="undecided" value="undecided" />
+            <label for="undecided">Undecided — that's why I'm here</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Which of these have you tasted?</legend>
+
+            <input type="checkbox" id="brie"  name="brie" value="brie" />
+            <label for="brie">Brie</label>
+            <input type="checkbox" id="roquefort"  name="roquefort" value="roquefort" />
+            <label for="roquefort">Roquefort</label>
+            <input type="checkbox" id="aged-gouda"  name="aged-gouda" value="aged-gouda" />
+            <label for="aged-gouda">Aged Gouda</label>
+        </fieldset>
+
+        <div class="form-question">
+            <label for="favorite">Tell us your favorite cheese: </label>
+            <input type="text" name="favorite" id="favorite" placeholder="e.g. Comte" />
+        </div>
+
+        <button type="button">Sign me up</button>
+    </form>
+
+    <button commandfor="why-join" command="show-modal">Why Join?</button>
+    <dialog id="why-join" popover>
+        <ul>
+            <li>Monthly tastings. The Society buys the cheese. You bring opinions.</li>
+            <li>Voting rights in the Cheese of the Month election.</li>
+            <li>Access to THE CAVE (a mini-fridge, but a very serious one).</li>
+            <li>A laminated membership card featuring the cheese of your choice.</li>
+            <li>Amnesty program for recovering blue-cheese skeptics.</li>
+            <button commandfor="why-join" command="close">I'm convinced</button>
+        </ul>
+    </dialog>
+
+
+  </main>
+
+  <footer>
+    <p>Footer — pushed to the bottom by the growing main, not by positioning.</p>
+  </footer>
+</body>
+</html>
