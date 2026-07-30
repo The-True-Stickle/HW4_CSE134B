@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soft-Ripened Cheeses</title>
+  <link rel="stylesheet" href="vars.css">
+  <link rel="stylesheet" href="global.css">
+  <!--
+    GRID PAGE SCAFFOLD
+    The same header/main/footer page as demo 06, built with grid instead.
+    grid-template-areas names the rows so the CSS reads like a sketch of
+    the page; each region claims its slot with grid-area. Rows are
+    auto 1fr auto: natural height at the edges, main takes the rest.
+  -->
+  <style>
+    body {
+      display: grid;
+      grid-template-areas:
+        "header"
+        "main"
+        "footer";
+      grid-template-rows: auto 1fr auto;
+      min-height: 100svh;
+
+      > header {
+        grid-area: header;
+        padding: var(--space-2) var(--space-3);
+        border-block-end: var(--border);
+        background: var(--panel);
+      }
+
+      > main {
+        grid-area: main;
+        padding: var(--space-3);
+      }
+
+      > footer {
+        grid-area: footer;
+        padding: var(--space-2) var(--space-3);
+        border-block-start: var(--border);
+        background: var(--panel);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Soft-Ripened Cheeses</h1>
+  </header>
+
+  <main>
+    <p>These grow a white, bloomy rind of Penicillium candidum that ripens
+the cheese from the outside in. Under the rind, the paste softens
+toward liquid as it ages.</p>
+<p>Character: a velvety edible rind over a paste that ranges from chalky
+(young) to molten (ripe). Flavors of mushroom, butter, and cream.</p>
+<p>Notable members: Brie, Camembert, and triple-creams like Brillat-
+Savarin.
+</p>
+<p>How to enjoy: serve at room temperature — cold Brie is a crime the
+Society will forgive exactly once. And yes, eat the rind. The rind is
+the point.</p>
+<p>Did you know? Camembert legend credits a Norman farmer, Marie Harel,
+with the recipe in 1791 — advice she supposedly received from a
+priest hiding from the Revolution.
+</p>
+  </main>
+
+  <footer>
+    <p>Footer — sits in the last named row, pinned to the bottom by the 1fr row above it.</p>
+  </footer>
+</body>
+</html>
